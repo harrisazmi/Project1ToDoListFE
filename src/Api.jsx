@@ -2,7 +2,7 @@
 
 import axios from "axios";
 
-const API_BASE_URL = "http://192.168.0.8:3001/api";
+const API_BASE_URL = "https://project1backendcf.harrisviewcodes.uk/api";
 
 export const fetchTodos = async () => {
   try {

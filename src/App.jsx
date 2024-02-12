@@ -10,7 +10,9 @@ const App = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://192.168.0.8:3001/api/todos");
+      const response = await axios.get(
+        "https://project1backendcf.harrisviewcodes.uk/api/todos"
+      );
       setTodos(response.data);
     } catch (error) {
       console.error("Error fetching todos:", error);
@@ -27,7 +29,10 @@ const App = () => {
 
   const handleTodoAdded = async (addedTodo) => {
     try {
-      await axios.post("http://192.168.0.8:3001/api/todos", addedTodo);
+      await axios.post(
+        "https://project1backendcf.harrisviewcodes.uk/api/todos",
+        addedTodo
+      );
       fetchData(); // Fetch updated todos after addition
     } catch (error) {
       console.error("Error adding todo:", error);
@@ -36,7 +41,9 @@ const App = () => {
 
   const handleTodoListRemoved = async () => {
     try {
-      await axios.delete("http://192.168.0.8:3001/api/todos");
+      await axios.delete(
+        "https://project1backendcf.harrisviewcodes.uk/api/todos"
+      );
       fetchData(); // Fetch updated todos after removal
     } catch (error) {
       console.error("Error removing todo list:", error);
@@ -45,7 +52,9 @@ const App = () => {
 
   const handleTodoRemoved = async (removedTodoId) => {
     try {
-      await axios.delete(`http://192.168.0.8:3001/api/todos/${removedTodoId}`);
+      await axios.delete(
+        `https://project1backendcf.harrisviewcodes.uk/api/todos/${removedTodoId}`
+      );
       fetchData(); // Fetch updated todos after removal
     } catch (error) {
       console.error("Error removing todo:", error);
